@@ -59,7 +59,7 @@ then
     fetchextract http://ftp.gnu.org/gnu/gcc/gcc-$GCC_VERSION/ gcc-$GCC_VERSION .tar.bz2
 else
     fetchextract "$GCC_URL"
-    if [ -e $GCC_EXTRACT_DIR ]; then
+    if [ ! -z $GCC_EXTRACT_DIR -a -e $GCC_EXTRACT_DIR ]; then
 	mv $GCC_EXTRACT_DIR gcc-$GCC_VERSION
     fi
 fi
